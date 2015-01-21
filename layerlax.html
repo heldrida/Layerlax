@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layerlax</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+	<ul class="layerlax">
+		  <li class="layer layer1" data-depth="0.2"><img src="img/Q1-BOTTOM-A.png"></li>
+		  <li class="layer layer2" data-depth="0.25"><img src="img/Q1-BOTTOM-B.png"></li>
+		  <li class="layer layer3" data-depth="0.3"><img src="img/Q1-TOP-A.png"></li>
+		  <li class="layer layer4" data-depth="-0.5"><img src="img/Q1-TOP-B.png"></li>
+	</ul>
+
+	<script type="text/javascript" src="js/Layerlax.js"></script>
+	<script type="text/javascript">
+	window.addEventListener("load", function () {
+		var element = document.querySelector('.layerlax'),
+			Layerlax = new Layerlax(element);
+	}, false);
+	</script>
+
+</body>
+</html>
