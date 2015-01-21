@@ -13,7 +13,9 @@ h1 {
 }
 .layerlax {
 	width: 75%;
+	height: 50%;
 	margin: 0 auto;
+	display: block;
 }
 .layerlax {
 	position: relative;
