@@ -18,8 +18,20 @@
     this.ix = 0;
     this.iy = 0;
 
+    // velocity
+    this.vx = 0;
+    this.vy = 0;
+    this.vz = 0;
+
+    // friction
+    this.friction = 0.01;
+
+
     // timeout
     this.timeout = null;
+
+    // locker
+    this.lock = false;
 
     // Initialise
     this.initialise();
@@ -63,7 +75,7 @@
       */
 
 
-    }.bind(this), 100);
+    }.bind(this), 0);
 
   };
 
@@ -73,9 +85,9 @@
 
       var z =  Math.abs(this.ix);
       z = z + 0.5;
-      z = Math.min(z, 1.1);
-      z = Math.max(z, 0.9);
- 
+      z = Math.min(z, 1);
+      z = Math.max(z, 0.75);
+
       this.setStyle(this.layers[i], this.ix, this.iy, z);
 
     }
@@ -90,21 +102,30 @@
         resistance = element.getAttribute('data-depth'),
         scale = element.getAttribute('data-scale');
 
-        val = val * resistance;
-        x = x * resistance;
-        y = y * resistance;
+        this.vx += (x - this.vx) * this.friction;
+        this.vy += (y - this.vy) *  this.friction;
+        this.vz += (z - this.vz) * this.friction;
 
         // element.style.webkitTransform = 'scale(' + val + ')';
         
         if (!scale) {
 
-          element.style.webkitTransform = 'translate3d(' + x + '%, ' + y + '%, 0)';
+          element.style.webkitTransform = 'translate3d(' + this.vx + '%, ' + this.vy + '%, 0)';
+          element.style.MozTransform = 'translate3d(' + this.vx + '%, ' + this.vy + '%, 0)';
+          element.style.msTransform = 'translate3d(' + this.vx + '%, ' + this.vy + '%, 0)';
+          element.style.oTransform = 'translate3d(' + this.vx + '%, ' + this.vy + '%, 0)';
+          element.style.transform = 'translate3d(' + this.vx + '%, ' + this.vy + '%, 0)';
 
         } else {
 
-          element.style.webkitTransform = 'scale(' + z + ')';
+          element.style.webkitTransform = 'scale(' + this.vz + ')';
+          element.style.MozTransform = 'scale(' + this.vz + ')';
+          element.style.msTransform = 'scale(' + this.vz + ')';
+          element.style.oTransform = 'scale(' + this.vz + ')';
+          element.style.transform = 'scale(' + this.vz + ')';
 
         }
+
 
   };
 

@@ -7,8 +7,7 @@ body {
 }
 body {
 	background-color: #C2E8E5;
-}
-h1 {
+}h1 {
 	padding: 20px;
 }
 .layerlax {
@@ -25,14 +24,22 @@ h1 {
 	top: 0;
 	left: 0;
 	width: 100%;
-	-webkit-transition: transform 2.2s ease-in-out;
-	transition: transform 2.2s ease-in-out;
+	/*
+	-o-transition: transform 1s ease-in-out;
+	-moz-transition: transform 1s ease-in-out;
+	-webkit-transition: transform 1s ease-in-out;
+	transition: transform 1s ease-in-out;
+	*/
 }
 .layerlax .layer img {
 	width: 100%;
 	height: auto;
 }
 .layerlax .layer[data-scale] {
-	-webkit-transition: transform 4s ease-in-out;
-	transition: transform 4s ease-in-out;
+	/*
+	-o-transition: transform 1s ease-in-out;
+	-moz-transition: transform 1s ease-in-out;
+	-webkit-transition: transform 1s ease-in-out;
+	transition: transform 1s ease-in-out;
+	*/
 }
