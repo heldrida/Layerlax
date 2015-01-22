@@ -25,3 +25,11 @@ h1 {
 	top: 0;
 	left: 0;
 }
+.layerlax .layer img {
+	width: 100%;
+	height: auto;
+}
+.layerlax .layer[data-scale] {
+	-webkit-transition: transform 0.6s ease-in-out;
+	transition: transform 0.6s ease-in-out;
+}
