@@ -30,6 +30,6 @@ h1 {
 	height: auto;
 }
 .layerlax .layer[data-scale] {
-	-webkit-transition: transform 0.6s ease-in-out;
-	transition: transform 0.6s ease-in-out;
+	-webkit-transition: transform 0.8s ease-in-out;
+	transition: transform 0.8s ease-in-out;
 }
