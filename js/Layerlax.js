@@ -35,8 +35,6 @@
     this.w = this.bounds.width;
     this.h = this.bounds.height;
 
-    console.log('this.bounds: ', this.bounds);
-
     // center
     this.cx = this.w / 2;
     this.cy = this.h / 2;
@@ -63,7 +61,12 @@
 
     for (var i = 0; i < this.layers.length; i++) {
 
-      this.setStyle(this.layers[i], this.ix, this.iy);
+      var z =  Math.abs(this.ix);
+      z = z + 0.5;
+      z = Math.min(z, 1.25);
+      z = Math.max(z, 1);
+      console.log('after z: ', z);
+      this.setStyle(this.layers[i], this.ix, this.iy, z);
 
     }
 
@@ -71,13 +74,11 @@
 
   };
 
-  Layerlax.prototype.setStyle = function (element, x, y) {
+  Layerlax.prototype.setStyle = function (element, x, y, z) {
     
     var val = (parseFloat(x) > 0 ? x : 1),
         resistance = element.getAttribute('data-depth'),
         scale = element.getAttribute('data-scale');
- 
-        console.log('scale: ', scale);
 
         val = val * resistance;
         x = x * resistance;
@@ -91,7 +92,7 @@
 
         } else {
 
-          element.style.webkitTransform = 'scale(' + x + ')';
+          element.style.webkitTransform = 'scale(' + z + ')';
 
         }
 
