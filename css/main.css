@@ -24,6 +24,7 @@ h1 {
 	position: absolute;
 	top: 0;
 	left: 0;
+	width: 100%;
 	-webkit-transition: transform 2.2s ease-in-out;
 	transition: transform 2.2s ease-in-out;
 }
