@@ -7,10 +7,18 @@
 <body>
 
 	<ul class="layerlax">
-		  <li class="layer layer1" data-depth="1.2"><img src="img/Q1-BOTTOM-A.png"></li>
-		  <li class="layer layer2" data-depth="1.5"><img src="img/Q1-BOTTOM-B.png"></li>
-		  <li class="layer layer3" data-depth="1.35" data-scale="1"><img src="img/Q1-TOP-A.png"></li>
-		  <li class="layer layer4" data-depth="1"><img src="img/Q1-TOP-B.png"></li>
+		  <li class="layer layer1" data-layer="1" data-depth="1.2" data-scale="1" data-zoom-in="1" data-zoom-out="1.03">
+		  	<img src="img/Q1-BOTTOM-A.png">
+		  </li>
+		  <li class="layer layer2" data-layer="2" data-depth="1.5">
+		  	<img src="img/Q1-BOTTOM-B.png">
+		  </li>
+		  <li class="layer layer3" data-layer="3" data-depth="1.35" data-scale="1" data-zoom-in="1" data-zoom-out="1.12">
+		  	<img src="img/Q1-TOP-A.png">
+		  </li>
+		  <li class="layer layer4" data-layer="4" data-depth="1">
+		  	<img src="img/Q1-TOP-B.png">
+		  </li>
 	</ul>
 
 	<script type="text/javascript" src="js/Layerlax.js"></script>
@@ -18,10 +26,6 @@
 	window.addEventListener("load", function () {
 		var element = document.querySelector('.layerlax'),
 			layerlax = new Layerlax(element);
-
-
-    console.log('element: ', element);
-
 	}, false);
 	</script>
 
