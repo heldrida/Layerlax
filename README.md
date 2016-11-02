@@ -24,3 +24,7 @@ npm install
 ```
 node server.js
 ```
+
+## How to use
+
+The constructor expects a main container element, as can you see in the html with the class `layerlax`, with the nested `layer` elements; The attributes `data-depth`, `data-scale` and `data-zoom-out` can be modified to change the visual effects. Feel free to change it and see the effects on-screen.
