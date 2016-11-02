@@ -1,6 +1,6 @@
 # LAYERLAX
 
-A prototype that demonstrates how to create depth, movement in response to the mouse move events.
+A prototype that demonstrates how to create element depth & movement, in response to the mouse move events.
 
 ## Getting Started
 
